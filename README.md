@@ -55,8 +55,19 @@ S1 첫 화면 → S2 이런 분께(3타입) → S3 30초 진단 → S4 장비 �
 - 코스: 첫 화면 탭 `data-course="line|firm"` ↔ S9 가격 카드 같은 값에 테두리. 진단 결과도 같은 값을 선택
 - 사례: S7 탭 `data-cat="line|day|firm"` ↔ `figure.case` 같은 값만 보임. S2 「사례 보기」 링크도 같은 값
 
+## 작업 방법 (GitHub Desktop 기준)
+
+1. 처음 한 번: GitHub Desktop 설치 → 로그인 → `File > Clone repository` → `timeofpassion/vc-landing`
+2. VS Code로 폴더 열기 → 수정 → 크롬으로 `index.html` 열어 확인 (PC + 개발자도구 모바일 390px)
+3. GitHub Desktop 왼쪽 아래 Summary에 **무엇을 고쳤는지 한 줄** (예: 「원장 사진 교체」) → `Commit to main` → `Push origin`
+4. 1분 뒤 https://vc-wedding-landing.vercel.app 새로고침으로 반영 확인
+5. **완료 = PC·모바일 캡처 2장**을 인트라넷 업무 댓글 또는 슬랙에 첨부
+
+- 잘못 올렸으면 GitHub Desktop `History` 에서 그 커밋 우클릭 → `Revert` (지우지 말고 되돌리기)
+- 막히면 캡처 찍어서 대표 또는 Claude에게
+
 ## 확인·배포
 
 - 확인: `index.html` 을 크롬으로 열기 → PC 폭 + 개발자도구 모바일(390px) 둘 다 보기
-- 배포: 이 폴더에서 `vercel --prod` (Vercel 프로젝트 `vc-wedding-landing`)
+- 배포: 따로 할 것 없음. main 에 Push 하면 자동 배포
 - 완료 기준 = 수정 후 **PC·모바일 캡처 2장**을 슬랙에 첨부
