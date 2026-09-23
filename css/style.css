@@ -56,14 +56,14 @@ p{margin:0 0 12px;color:var(--sub)}
 .btn--sm{padding:9px 16px;font-size:13px}
 
 /* ---------- 상단 바 ---------- */
-.topbar{position:fixed;inset:0 0 auto;z-index:20;background:rgba(30,28,27,.72);backdrop-filter:blur(8px)}
+.topbar{position:fixed;inset:0 0 auto;z-index:20;background:rgba(30,28,27,.72);backdrop-filter:blur(8px);padding-top:env(safe-area-inset-top)}
 .topbar .btn--kakao{display:none}
 .topbar__in{display:flex;justify-content:space-between;align-items:center;height:60px}
 .logo{display:flex;align-items:center;color:#EDE2D6;text-decoration:none}
 .logo img{height:26px;display:block}
 
 /* ---------- S1 첫 화면 ---------- */
-.hero{position:relative;min-height:100vh;background:var(--deep);color:#EDE2D6;display:flex;align-items:center;overflow:hidden}
+.hero{position:relative;min-height:100vh;min-height:100dvh;background:var(--deep);color:#EDE2D6;display:flex;align-items:center;overflow:hidden}
 .hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center;animation:slowzoom 9s ease-out both}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(36,24,16,.92) 0%,rgba(36,24,16,.55) 45%,rgba(36,24,16,0) 70%)}
 .hero__in{position:relative;z-index:1;width:100%;padding-top:60px}
@@ -290,7 +290,7 @@ figure:has(> .ai-sample)::after,.persona:has(> img.ai-sample)::after,.split__med
 .doctor__creds li::before{content:"·";position:absolute;left:0;color:var(--gold)}
 
 /* S6 공간 */
-.space{position:relative;min-height:80vh;display:flex;align-items:flex-end;color:#EDE2D6;overflow:hidden}
+.space{position:relative;min-height:80vh;min-height:80dvh;display:flex;align-items:flex-end;color:#EDE2D6;overflow:hidden}
 .space h2{background:linear-gradient(90deg,#fff,#F4F1EB);-webkit-background-clip:text;background-clip:text;color:transparent}
 .space__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .space::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(30,28,27,.85),rgba(30,28,27,0) 60%)}
@@ -342,7 +342,7 @@ figure:has(> .ai-sample)::after,.persona:has(> img.ai-sample)::after,.split__med
   .final__location{font-size:26px}
   .final__addr-sub{display:block}
   .container{padding:0 20px}
-  .hero{align-items:flex-end;min-height:calc(92vh + 60px)}
+  .hero{align-items:flex-end;min-height:calc(92vh + 60px);min-height:calc(92dvh + 60px)}
   .hero__img{object-position:center center;transform:none}
   .hero::after{background:linear-gradient(0deg,rgba(36,24,16,.95) 0%,rgba(36,24,16,.55) 45%,rgba(36,24,16,.15) 75%,rgba(36,24,16,0) 85%)}
   .hero__in{padding-bottom:50px}
@@ -425,7 +425,7 @@ figure:has(> .ai-sample)::after,.persona:has(> img.ai-sample)::after,.split__med
   .quiz__reset{top:24px;right:24px}
   .sec--dday{padding-top:76px;padding-bottom:76px;overflow:visible}
   .sec--dday::before{background-position:calc(50% - 150px) center;transform:scaleY(-1)}
-  .space{min-height:70vh}
+  .space{min-height:70vh;min-height:70dvh}
   .space__in{padding-bottom:30px}
   .aftercare__desc{font-size:15px;line-height:1.6}
   .cat-tabs{overflow-x:auto}
@@ -433,9 +433,9 @@ figure:has(> .ai-sample)::after,.persona:has(> img.ai-sample)::after,.split__med
   .draft-bar{bottom:auto;top:0;font-size:11px}
   .sticky{bottom:0}
   .sticky.is-show{transform:none}
-  .sticky{display:block;transform:translateY(110%);transition:transform .25s ease;position:fixed;inset:auto 0 0;padding:10px 16px;background:rgba(255,255,255,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:none;z-index:20}
+  .sticky{display:block;transform:translateY(110%);transition:transform .25s ease;position:fixed;inset:auto 0 0;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:none;z-index:20}
   .side-nav{display:none}
-  .top-fab{all:unset;box-sizing:border-box;display:flex;align-items:center;justify-content:center;position:fixed;right:16px;bottom:100px;width:44px;height:44px;border-radius:50%;background:var(--gold);color:#fff;box-shadow:0 6px 16px rgba(0,0,0,.25);z-index:60;cursor:pointer}
+  .top-fab{all:unset;box-sizing:border-box;display:flex;align-items:center;justify-content:center;position:fixed;right:16px;bottom:calc(100px + env(safe-area-inset-bottom));width:44px;height:44px;border-radius:50%;background:var(--gold);color:#fff;box-shadow:0 6px 16px rgba(0,0,0,.25);z-index:60;cursor:pointer}
   .top-fab svg{width:20px;height:20px}
   .sticky .btn{width:100%}
   .sticky .btn--kakao{background:linear-gradient(90deg,#897666,#49403A)}
