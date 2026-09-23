@@ -21,12 +21,37 @@ const COURSE_TEXT = {
 /* ---------- 카톡 버튼 연결 ---------- */
 document.querySelectorAll('.js-kakao').forEach(a => { a.href = KAKAO_URL; a.target = '_blank'; a.rel = 'noopener'; });
 
+/* ---------- 빠른 스크롤 (기본 smooth보다 짧고 빠르게) ---------- */
+function fastScrollTo(el, duration = 350) {
+  const startY = window.scrollY;
+  const targetY = startY + el.getBoundingClientRect().top;
+  const distance = targetY - startY;
+  const startTime = performance.now();
+  function step(now) {
+    const t = Math.min((now - startTime) / duration, 1);
+    const eased = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+    window.scrollTo({ top: startY + distance * eased, behavior: 'instant' });
+    if (t < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
 /* ---------- 코스 선택 (첫 화면 탭 · 진단 결과 공용) ---------- */
 function selectCourse(course) {
   document.querySelectorAll('.tabs__btn').forEach(b => b.classList.toggle('is-on', b.dataset.course === course));
   document.querySelectorAll('.price').forEach(el => el.classList.toggle('is-on', el.dataset.course === course));
 }
-document.querySelectorAll('.tabs__btn').forEach(btn => btn.addEventListener('click', () => selectCourse(btn.dataset.course)));
+document.querySelectorAll('.tabs__btn').forEach(btn => btn.addEventListener('click', () => {
+  selectCourse(btn.dataset.course);
+  document.querySelectorAll('.tabs__btn').forEach(b => b.classList.toggle('was-clicked', b === btn));
+  fastScrollTo(document.getElementById('price'));
+}));
+document.querySelectorAll('.tabs__btn').forEach(btn => {
+  const preview = document.querySelector(`.tabs__preview[data-preview="${btn.dataset.course}"]`);
+  if (!preview) return;
+  btn.addEventListener('mouseenter', () => preview.classList.add('is-open'));
+  btn.addEventListener('mouseleave', () => preview.classList.remove('is-open'));
+});
 
 /* ---------- 사례 탭 (3타입) ---------- */
 function selectCat(cat) {
@@ -45,7 +70,13 @@ quiz.addEventListener('submit', e => {
   const c = COURSE_TEXT[course];
   const soon = f.get('q2') === 'soon' ? ' 일정이 한 달 안이라면 이번 주 상담을 권해드려요.' : '';
   const box = document.getElementById('quizResult');
-  box.innerHTML = `<b>${c.name}</b><p>${c.devices} · ${c.why}${soon}</p><a class="btn btn--kakao" href="${KAKAO_URL}" target="_blank" rel="noopener">이 결과로 카톡 상담</a>`;
+  box.innerHTML = `<button type="button" class="quiz__reset" aria-label="다시 진단하기">↻</button><b>${c.name}</b><p>${c.devices} · ${c.why}${soon}</p><a class="btn btn--kakao quiz__result-cta" href="${KAKAO_URL}" target="_blank" rel="noopener">이 결과로 카톡 상담</a>`;
+  box.querySelector('.quiz__reset').addEventListener('click', () => {
+    quiz.reset();
+    box.hidden = true;
+    box.innerHTML = '';
+    setCta('카톡으로 무료 상담');
+  });
   box.hidden = false;
   selectCourse(course);
   setCta(`${c.name} 카톡 상담`);
@@ -75,7 +106,7 @@ input.addEventListener('change', renderDday);
 
 /* ---------- 하단 고정 버튼: 문구가 행동에 따라 바뀜 ---------- */
 const stickyCta = document.getElementById('stickyCta');
-function setCta(text) { stickyCta.textContent = text; }
+function setCta(text) { stickyCta.querySelector('.btn__label').textContent = text; }
 const sticky = document.querySelector('.sticky');
 new IntersectionObserver(([e]) => sticky.classList.toggle('is-show', !e.isIntersecting)).observe(document.querySelector('.hero'));
 
@@ -87,3 +118,8 @@ document.querySelectorAll('.sec h2, .persona, .tech, .split__media, .timeline, .
   if (!el.classList.contains('skin')) el.classList.add('reveal');
   io.observe(el);
 });
+
+/* ---------- 우측 사이드바 · 모바일 TOP 버튼 ---------- */
+document.querySelectorAll('#sideTop, #mobileTop').forEach(btn => btn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}));

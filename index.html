@@ -27,7 +27,7 @@
 
 <header class="topbar">
   <div class="container topbar__in">
-    <a class="logo" href="#top">VC PLASTIC SURGERY</a>
+    <a class="logo" href="#top"><img src="images/logo-white.png" alt="VC PLASTIC SURGERY & CLINIC"></a>
     <nav class="topnav">
       <a href="#who">이런 분께</a><a href="#tech">장비 원리</a><a href="#doctor">원장</a><a href="#cases">사례</a><a href="#price">가격</a>
     </nav>
@@ -39,17 +39,38 @@
 
   <!-- ===================== S1 첫 화면 ===================== -->
   <section class="hero">
-    <img class="hero__img" src="images/s1-hero.jpg" alt="턱선이 드러나는 여성의 옆모습">
+    <picture>
+      <source media="(max-width:960px)" srcset="images/s1-hero-mobile.jpg">
+      <img class="hero__img" src="images/s1-hero.jpg" alt="턱선을 만지는 여성의 얼굴 클로즈업">
+    </picture>
     <div class="container hero__in">
       <p class="eyebrow">FACE LINE LIFTING · CHEONGDAM</p>
-      <h1 class="hero__title">사진에 남는 건<br>결국 얼굴선입니다</h1>
+      <div class="hero__title-wrap">
+        <p class="hero__title hero__title--shadow" aria-hidden="true">사진에 남는 건<br>결국 얼굴선입니다</p>
+        <h1 class="hero__title">사진에 남는 건<br>결국 얼굴선입니다</h1>
+      </div>
       <p class="hero__sub">윤곽은 올리고, 부기는 정리하는 두 가지 코스.<br>성형외과 전문의가 얼굴 구조를 보고 정합니다.</p>
+      <div class="hero__divider" aria-hidden="true"></div>
       <div class="tabs" role="tablist">
-        <button class="tabs__btn is-on" data-course="line" role="tab">라인 정리 코스<small>파인웨이브 + 파셀라</small></button>
-        <button class="tabs__btn" data-course="firm" role="tab">탄력·결 코스<small>포트라 + 파셀라</small></button>
+        <div class="tabs__item">
+          <button class="tabs__btn is-on" data-course="line" role="tab">라인 정리 코스<small>파인웨이브 + 파셀라</small></button>
+        </div>
+        <div class="tabs__item">
+          <button class="tabs__btn" data-course="firm" role="tab">탄력·결 코스<small>포트라 + 파셀라</small></button>
+        </div>
+        <div class="tabs__preview" data-preview="line">
+          <img src="images/price-line-bg.jpg" alt="">
+          <p>지방감소 및 갸름해지는<br>탄력 리프팅</p>
+          <img class="tabs__preview-logo" src="images/tabs-preview-logo.png" alt="">
+        </div>
+        <div class="tabs__preview" data-preview="firm">
+          <img src="images/price-firm-bg.jpg" alt="">
+          <p>기존 티타늄의 3파장 구성에<br>새로운 파장을 더한<br>4파장 시스템</p>
+          <img class="tabs__preview-logo" src="images/tabs-preview-logo.png" alt="">
+        </div>
       </div>
       <div class="hero__cta">
-        <a class="btn btn--kakao js-kakao" href="#">카톡으로 무료 상담</a>
+        <a class="btn btn--kakao js-kakao" href="#"><span class="btn__label">카톡으로 무료 상담</span></a>
         <a class="btn btn--ghost" href="#quiz">30초 코스 진단</a>
       </div>
     </div>
@@ -62,21 +83,21 @@
       <h2>이런 순간,<br>한 번쯤 있으셨죠</h2>
       <div class="personas">
         <article class="persona">
-          <img class="ai-sample" src="images/p1-line.jpg" alt="셀카를 보며 턱선을 만지는 여성">
+          <img src="images/p1-line.jpg" alt="셀카를 보며 턱선을 만지는 여성">
           <small>TYPE 01 · 20~30대</small>
           <h3>얼굴선을 또렷하게<br>잡고 싶은 분</h3>
           <ul><li>셀카 각도를 늘 위에서만 찍는다</li><li>살은 빠졌는데 턱 밑은 그대로다</li><li>옆모습 사진이 제일 신경 쓰인다</li></ul>
           <a href="#cases" data-cat="line" class="persona__go">이 타입 사례 보기 →</a>
         </article>
         <article class="persona">
-          <img class="ai-sample" src="images/p2-day.jpg" alt="촬영 일정을 확인하는 여성">
+          <img src="images/p2-day.jpg" alt="촬영 일정을 확인하는 여성">
           <small>TYPE 02 · 중요한 날 준비</small>
           <h3>결혼식·촬영·모임을<br>앞둔 분</h3>
           <ul><li>날짜는 정해졌는데 뭘 받을지 모르겠다</li><li>붓기나 붉은기가 남을까 걱정된다</li><li>티 나지 않게 정리만 하고 싶다</li></ul>
           <a href="#cases" data-cat="day" class="persona__go">이 타입 사례 보기 →</a>
         </article>
         <article class="persona">
-          <img class="ai-sample" src="images/p3-firm.jpg" alt="거울 앞에서 볼 탄력을 확인하는 여성">
+          <img src="images/p3-firm.jpg" alt="거울 앞에서 볼 탄력을 확인하는 여성">
           <small>TYPE 03 · 30~40대</small>
           <h3>탄력과 피부결이<br>달라진 걸 느낀 분</h3>
           <ul><li>아침 거울 속 볼 라인이 내려와 보인다</li><li>화장이 모공에 끼기 시작했다</li><li>수술까지는 아직 이르다고 생각한다</li></ul>
@@ -116,42 +137,47 @@
   </section>
 
   <!-- ===================== S4 장비 원리 ===================== -->
-  <section class="sec" id="tech">
+  <section class="sec sec--tech" id="tech">
     <div class="container">
       <p class="eyebrow">HOW IT WORKS</p>
       <h2>처음 듣는 장비라면,<br>원리부터 보세요</h2>
-      <p class="lead">피부는 겉에서부터 표피 · 진피 · 지방층 · 근막층으로 나뉩니다. 장비마다 에너지가 닿는 층과 방식이 다릅니다.</p>
+      <p class="lead">피부는 겉에서부터 표피층 · 진피층 · 피하지방층 · 근막층(SMAS)으로 나뉩니다. <br class="brk-pc">장비마다 에너지가 닿는 층과 방식이 다릅니다.</p>
 
       <div class="techs">
         <article class="tech" data-course-hint="line">
           <svg class="skin" viewBox="0 0 240 150" aria-hidden="true">
             <rect y="0" width="240" height="20" class="s1"/><rect y="20" width="240" height="40" class="s2 hit"/><rect y="60" width="240" height="55" class="s3 hit"/><rect y="115" width="240" height="35" class="s4"/>
-            <path d="M40 0 Q60 60 40 115 M120 0 Q140 60 120 115 M200 0 Q220 60 200 115" class="wave"/>
-            <text x="6" y="14">표피</text><text x="6" y="44">진피</text><text x="6" y="92">지방층</text><text x="6" y="137">근막층</text>
+            <g class="ring-col">
+              <ellipse cx="100" cy="6" rx="9" ry="4"/><ellipse cx="100" cy="18" rx="11" ry="4.5"/><ellipse cx="100" cy="31" rx="13" ry="5"/><ellipse cx="100" cy="45" rx="16" ry="5.5"/><ellipse cx="100" cy="59" rx="19" ry="6"/>
+            </g>
+            <g class="ring-col">
+              <ellipse cx="180" cy="5" rx="9" ry="4"/><ellipse cx="180" cy="15" rx="10" ry="4.2"/><ellipse cx="180" cy="26" rx="12" ry="4.5"/><ellipse cx="180" cy="38" rx="14" ry="5"/><ellipse cx="180" cy="51" rx="16" ry="5.5"/><ellipse cx="180" cy="65" rx="18" ry="6"/><ellipse cx="180" cy="80" rx="20" ry="6.5"/><ellipse cx="180" cy="96" rx="23" ry="7"/><ellipse cx="180" cy="113" rx="26" ry="7.5"/>
+            </g>
+            <text x="6" y="14">표피층</text><text x="6" y="44">진피층</text><text x="6" y="92">피하지방층</text><text x="6" y="137">근막층(SMAS)</text>
           </svg>
           <small>MICROWAVE</small>
           <h3>파인웨이브</h3>
-          <p class="tech__one">전자레인지처럼 <b>물 분자를 진동시켜</b> 속에서 열을 만듭니다.</p>
+          <p class="tech__one">마이크로웨이브로 완성하는 통증 적은 밀착 타이트닝</p>
           <dl>
             <dt>에너지</dt><dd>2.45GHz 마이크로웨이브</dd>
-            <dt>닿는 층</dt><dd>진피 + 지방층</dd>
-            <dt>기대 방향</dt><dd>턱선·이중턱 정리, 탄력</dd>
+            <dt>닿는 층</dt><dd>진피층 + 피하지방층</dd>
+            <dt>기대 방향</dt><dd>턱선·이중턱 정리 + 탄력</dd>
             <dt>특징</dt><dd>이중 냉각 · 피부에 닿을 때만 방출</dd>
           </dl>
         </article>
 
         <article class="tech" data-course-hint="firm">
           <svg class="skin" viewBox="0 0 240 150" aria-hidden="true">
-            <rect y="0" width="240" height="20" class="s1 hit"/><rect y="20" width="240" height="40" class="s2 hit"/><rect y="60" width="240" height="55" class="s3 hit"/><rect y="115" width="240" height="35" class="s4"/>
-            <line x1="70" y1="0" x2="70" y2="20" class="beam b1"/><line x1="110" y1="0" x2="110" y2="55" class="beam b2"/><line x1="150" y1="0" x2="150" y2="85" class="beam b3"/><line x1="190" y1="0" x2="190" y2="112" class="beam b4"/>
-            <text x="6" y="14">표피</text><text x="6" y="44">진피</text><text x="6" y="92">지방층</text><text x="6" y="137">근막층</text>
+            <rect y="0" width="240" height="20" class="s1"/><rect y="20" width="240" height="40" class="s2 hit"/><rect y="60" width="240" height="55" class="s3 hit"/><rect y="115" width="240" height="35" class="s4"/>
+            <line x1="80" y1="0" x2="80" y2="20" class="beam b1"/><line x1="120" y1="0" x2="120" y2="60" class="beam b2"/><line x1="160" y1="0" x2="160" y2="115" class="beam b3"/><line x1="200" y1="0" x2="200" y2="148" class="beam b4"/>
+            <text x="6" y="14">표피층</text><text x="6" y="44">진피층</text><text x="6" y="92">피하지방층</text><text x="6" y="137">근막층(SMAS)</text>
           </svg>
           <small>4-WAVELENGTH LASER</small>
           <h3>포트라</h3>
-          <p class="tech__one">파장이 길수록 깊이 들어갑니다. <b>4개 파장을 층마다 나눠</b> 씁니다.</p>
+          <p class="tech__one">4파장이 완성하는 입체 리프팅</p>
           <dl>
             <dt>에너지</dt><dd>755 · 808 · 940 · 1064nm 레이저</dd>
-            <dt>닿는 층</dt><dd>표피 ~ 지방층</dd>
+            <dt>닿는 층</dt><dd>표피층 ~ 피하지방층</dd>
             <dt>기대 방향</dt><dd>탄력 + 피부결 · 톤 · 모공</dd>
             <dt>특징</dt><dd>쿨링 시스템 · 목적별 모드</dd>
           </dl>
@@ -159,17 +185,17 @@
 
         <article class="tech">
           <svg class="skin" viewBox="0 0 240 150" aria-hidden="true">
-            <rect y="0" width="240" height="20" class="s1"/><rect y="20" width="240" height="40" class="s2"/><rect y="60" width="240" height="55" class="s3 hit"/><rect y="115" width="240" height="35" class="s4 hit"/>
-            <path d="M20 132 C50 118 80 146 110 132 S170 118 220 132" class="wave"/>
-            <path d="M20 90 C50 76 80 104 110 90 S170 76 220 90" class="wave wave--2"/>
-            <text x="6" y="14">표피</text><text x="6" y="44">진피</text><text x="6" y="92">지방층</text><text x="6" y="137">근막층</text>
+            <rect y="0" width="240" height="20" class="s1"/><rect y="20" width="240" height="40" class="s2 hit"/><rect y="60" width="240" height="55" class="s3 hit"/><rect y="115" width="240" height="35" class="s4"/>
+            <path d="M75 132 C99 118 123 146 147 132 S195 118 235 132" class="wave"/>
+            <path d="M75 90 C99 76 123 104 147 90 S195 76 235 90" class="wave wave--2"/>
+            <text x="6" y="14">표피층</text><text x="6" y="44">진피층</text><text x="6" y="92">피하지방층</text><text x="6" y="137">근막층(SMAS)</text>
           </svg>
           <small>RF + LF DUAL</small>
           <h3>파셀라</h3>
-          <p class="tech__one">고주파(RF)가 <b>깊은 층을 데우고</b>, 저주파(LF)가 <b>순환을 돕습니다.</b></p>
+          <p class="tech__one">고주파와 저주파의 듀얼 에너지, 근막부터 끌어올리는 리프팅</p>
           <dl>
             <dt>에너지</dt><dd>고주파 + 저주파 복합</dd>
-            <dt>닿는 층</dt><dd>지방층 ~ 근막층</dd>
+            <dt>닿는 층</dt><dd>피하지방층 ~ 근막층(SMAS)</dd>
             <dt>기대 방향</dt><dd>부기 · 얼굴선 정리</dd>
             <dt>특징</dt><dd>마취 없이 · 피부 위를 미끄러지듯</dd>
           </dl>
@@ -178,56 +204,82 @@
 
       <div class="why-combo">
         <p class="big">왜 두 개를 함께 받나요?</p>
-        <p><b>파인웨이브·포트라</b>는 탄력과 윤곽을 올리는 역할, <b>파셀라</b>는 부기와 라인을 정리하는 역할입니다. 한쪽만 받으면 선이 서지 않거나 부기가 남습니다. <span class="todo">[확인필요] 원장 추천 이유 1~2줄</span></p>
+        <p><b>파인웨이브나 포트라</b> 뿐만아니라 다른 레이저 리프팅 기기들은 <b>피부층(진피층, 피하지방층, SMAS층)을 타깃</b>하고, <br class="brk-pc"><b>파셀라로 근막 이완과 림프 순환을 함께 관리해 리프팅 시너지를 높입니다.</b></p>
       </div>
-      <p class="note">효과와 유지 기간은 개인에 따라 다릅니다. 시술 가능 여부는 진료 후 결정합니다.</p>
+      <p class="note">효과와 유지 기간은 개인에 따라 다릅니다. <br class="brk-m">시술 가능 여부는 진료 후 결정합니다.</p>
     </div>
   </section>
 
   <!-- ===================== S5 원장 · 전문성 ===================== -->
-  <section class="sec sec--dark" id="doctor">
+  <section class="sec sec--doctor" id="doctor">
     <div class="container split">
       <div class="split__media doctor__photo">
-        <div class="photo-wait">원장 프로필 사진<br><small>병원 제공 사진으로 교체</small></div>
+        <img src="images/doctor-full.png" alt="최민석 원장 전신 사진">
       </div>
       <div class="split__text">
         <p class="eyebrow">DOCTOR</p>
-        <h2>장비보다 먼저,<br>얼굴 구조를 봅니다</h2>
-        <p class="doctor__name">대표원장 <b>최민석</b> · 성형외과 전문의</p>
-        <ul class="creds">
-          <li><b>15년</b><span>성형외과 경력 · 상담부터 시술까지 직접</span></li>
-          <li><b>2개 자격</b><span>성형외과 전문의 + 종합미용사 자격</span></li>
-          <li><b>3대</b><span>외과 가문의 진료 철학</span></li>
-        </ul>
-        <p class="todo">[확인필요] 학력 · 수련병원 · 학회 활동 3~5줄</p>
-        <p class="note">출처: VC성형외과 홈페이지 소개</p>
+        <h2 class="doctor__heading"><b>최민석</b> <span class="doctor__role">대표원장</span></h2>
+        <p class="doctor__tagline">진정한 아름다움은<br>어느 한 곳에 치우치지 않음에서 시작합니다.</p>
+        <div class="doctor__divider"></div>
+        <div class="doctor__creds">
+          <div>
+            <h4>경력</h4>
+            <ul>
+              <li>성형외과 전문의</li>
+              <li>서울아산병원 수련의</li>
+              <li><b>현) VC성형외과 대표원장</b></li>
+              <li>전) 우리성형외과 원장</li>
+            </ul>
+          </div>
+          <div>
+            <h4>학술 및 학회활동</h4>
+            <ul>
+              <li>대한 성형외과학회 종신회원</li>
+              <li>대한 미용성형외과학회 정회원</li>
+              <li>대한 항노화연구회 정회원</li>
+              <li>대한 지방성형줄기세포연구회 정회원</li>
+              <li>대한 보톡스,필러,실리프팅연구회 임원</li>
+            </ul>
+          </div>
+        </div>
+        <div class="doctor__creds doctor__creds--full">
+          <div>
+            <h4>해외 학술 및 학회활동</h4>
+            <ul>
+              <li>국제 미용성형외과학회(IPRAS) 정회원</li>
+              <li>American Society for Reconstructive microsurgery (ASRM)</li>
+              <li>International Conference on Plastic Surgery and Hand Surgery(ICPSHS)</li>
+              <li>Los Angeles Multi-Specialty Cosmetic Academy (LA-MCA)</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===================== S6 공간 · 에스테틱 ===================== -->
   <section class="space">
-    <img class="space__img ai-sample" src="images/s6-lounge.jpg" alt="프라이빗 라운지 예시 이미지">
+    <img class="space__img" src="images/s6-lounge.jpg" alt="VC성형외과 프라이빗 라운지">
     <div class="container space__in">
       <p class="eyebrow">SPACE</p>
-      <h2>성형외과와 에스테틱이<br>한 공간에</h2>
-      <p>대기 · 상담 · 시술 · 회복이 한 공간에서 이어집니다. 다른 분과 마주칠 일이 없습니다.</p>
+      <h2>한 사람에게 집중하는 공간, <br>VC에서 완성되는 프라이빗 케어</h2>
+      <p class="space__desc">VC성형외과는 대기부터 상담, 시술, 회복까지<br class="brk-m"> 하나의 흐름으로 이어지는 프라이빗 진료 환경을 제공합니다.</p>
     </div>
   </section>
   <section class="sec">
     <div class="container split split--rev">
       <div class="split__text">
         <p class="eyebrow">AFTER CARE</p>
-        <h2>시술이 끝나면,<br>바로 옆에서 관리까지</h2>
-        <p>20년을 이어온 에스테틱이 같은 공간에 있어, 병원을 옮겨 다닐 필요가 없습니다.</p>
+        <h2>진료부터 시술, 회복까지<br>세심한 설계</h2>
+        <p class="aftercare__desc">보이는 변화뿐 아니라 머무는 시간까지 만족할 수 있도록, <br>한 분에게 온전히 집중하는 진료를 지향합니다.</p>
         <ol class="flow">
           <li><b>01</b>프라이빗 대기</li>
           <li><b>02</b>전문의 상담 · 분석</li>
           <li><b>03</b>시술</li>
-          <li><b>04</b>에스테틱 진정 관리 <span class="todo">[포함 여부 확인]</span></li>
+          <li><b>04</b>기초 스킨케어 및 마스크팩 관리</li>
         </ol>
       </div>
-      <div class="split__media"><img class="ai-sample" src="images/s6-esthetic.jpg" alt="에스테틱 관리실 예시 이미지"></div>
+      <div class="split__media"><img src="images/s6-esthetic.jpg" alt="VC성형외과 에스테틱 관리실"></div>
     </div>
   </section>
 
@@ -243,17 +295,52 @@
       </div>
       <!-- 사례 1건 = figure 하나. data-cat 으로 탭 분류 (line / day / firm) -->
       <div class="cases">
-        <figure class="case" data-cat="line"><img class="ai-sample" src="images/c-line-1.jpg" alt="턱선 사례 예시"><figcaption><b>이중턱 · 턱선</b>라인 정리 코스 · <span class="todo">경과일</span></figcaption></figure>
-        <figure class="case" data-cat="line"><img class="ai-sample" src="images/c-line-2.jpg" alt="윤곽 사례 예시"><figcaption><b>하관 윤곽</b>라인 정리 코스 · <span class="todo">경과일</span></figcaption></figure>
-        <figure class="case" data-cat="line"><img class="ai-sample" src="images/c-line-3.jpg" alt="옆선 사례 예시"><figcaption><b>턱-목 라인</b>라인 정리 코스 · <span class="todo">경과일</span></figcaption></figure>
-        <figure class="case" data-cat="day" hidden><img class="ai-sample" src="images/c-day-1.jpg" alt="부기 사례 예시"><figcaption><b>촬영 전 부기</b>라인 정리 코스 · <span class="todo">경과일</span></figcaption></figure>
-        <figure class="case" data-cat="day" hidden><img class="ai-sample" src="images/c-day-2.jpg" alt="볼 라인 사례 예시"><figcaption><b>본식 전 볼 라인</b>탄력·결 코스 · <span class="todo">경과일</span></figcaption></figure>
-        <figure class="case" data-cat="day" hidden><img class="ai-sample" src="images/c-day-3.jpg" alt="옆선 사례 예시"><figcaption><b>프로필 촬영 전</b>라인 정리 코스 · <span class="todo">경과일</span></figcaption></figure>
-        <figure class="case" data-cat="firm" hidden><img class="ai-sample" src="images/c-firm-1.jpg" alt="처짐 사례 예시"><figcaption><b>볼 · 입가 처짐</b>탄력·결 코스 · <span class="todo">경과일</span></figcaption></figure>
-        <figure class="case" data-cat="firm" hidden><img class="ai-sample" src="images/c-firm-2.jpg" alt="피부결 사례 예시"><figcaption><b>모공 · 피부결</b>탄력·결 코스 · <span class="todo">경과일</span></figcaption></figure>
-        <figure class="case" data-cat="firm" hidden><img class="ai-sample" src="images/c-firm-3.jpg" alt="턱 밑 탄력 사례 예시"><figcaption><b>턱 밑 탄력</b>탄력·결 코스 · <span class="todo">경과일</span></figcaption></figure>
+        <figure class="case" data-cat="line">
+          <div class="case__combo"><img src="images/c-line-1-combo.jpg" alt="이중턱 사례 시술 전후 비교"></div>
+          <figcaption><b>이중턱 · 턱선</b><span class="case__course">라인 정리 코스</span></figcaption>
+        </figure>
+        <figure class="case" data-cat="line">
+          <div class="case__pair case__pair--3">
+            <div class="case__shot"><img src="images/c-line-2-before.jpg" alt="윤곽 사례 예시 전"></div>
+            <div class="case__shot"><img src="images/c-line-2-after.jpg" alt="윤곽 사례 예시 후"></div>
+            <div class="case__shot ai-sample"><img src="images/c-line-2-after.jpg" alt="윤곽 사례 예시 후"></div>
+          </div>
+          <figcaption><b>하관 윤곽</b><span class="case__course">라인 정리 코스</span></figcaption>
+        </figure>
+        <figure class="case" data-cat="day" hidden>
+          <div class="case__pair case__pair--3">
+            <div class="case__shot"><img src="images/c-day-1-before.jpg" alt="부기 사례 예시 전"></div>
+            <div class="case__shot"><img src="images/c-day-1-after.jpg" alt="부기 사례 예시 후"></div>
+            <div class="case__shot ai-sample"><img src="images/c-day-1-after.jpg" alt="부기 사례 예시 후"></div>
+          </div>
+          <figcaption><b>촬영 전 부기</b><span class="case__course">라인 정리 코스</span></figcaption>
+        </figure>
+        <figure class="case" data-cat="day" hidden>
+          <div class="case__pair case__pair--3">
+            <div class="case__shot"><img src="images/c-day-2-before.jpg" alt="볼 라인 사례 예시 전"></div>
+            <div class="case__shot"><img src="images/c-day-2-after.jpg" alt="볼 라인 사례 예시 후"></div>
+            <div class="case__shot ai-sample"><img src="images/c-day-2-after.jpg" alt="볼 라인 사례 예시 후"></div>
+          </div>
+          <figcaption><b>본식 전 볼 라인</b><span class="case__course">탄력·결 코스</span></figcaption>
+        </figure>
+        <figure class="case" data-cat="firm" hidden>
+          <div class="case__pair case__pair--3">
+            <div class="case__shot"><img src="images/c-firm-1-before.jpg" alt="처짐 사례 예시 전"></div>
+            <div class="case__shot"><img src="images/c-firm-1-after.jpg" alt="처짐 사례 예시 후"></div>
+            <div class="case__shot ai-sample"><img src="images/c-firm-1-after.jpg" alt="처짐 사례 예시 후"></div>
+          </div>
+          <figcaption><b>볼 · 입가 처짐</b><span class="case__course">탄력·결 코스</span></figcaption>
+        </figure>
+        <figure class="case" data-cat="firm" hidden>
+          <div class="case__pair case__pair--3">
+            <div class="case__shot"><img src="images/c-firm-2-before.jpg" alt="피부결 사례 예시 전"></div>
+            <div class="case__shot"><img src="images/c-firm-2-after.jpg" alt="피부결 사례 예시 후"></div>
+            <div class="case__shot ai-sample"><img src="images/c-firm-2-after.jpg" alt="피부결 사례 예시 후"></div>
+          </div>
+          <figcaption><b>모공 · 피부결</b><span class="case__course">탄력·결 코스</span></figcaption>
+        </figure>
       </div>
-      <p class="note">개인에 따라 결과가 다를 수 있습니다. 실제 오픈 시 동의받은 병원 사진만 사용합니다.</p>
+      <p class="note">개인에 따라 결과가 다를 수 있습니다.<br class="brk-m"> 실제 오픈 시 동의받은 병원 사진만 사용합니다.</p>
     </div>
   </section>
 
@@ -271,9 +358,9 @@
         <p class="dday__result" id="ddayResult">날짜를 넣으면 지금 시작해도 되는지 알려드려요.</p>
       </div>
       <ol class="timeline">
-        <li><b>D-30</b><p>코스 시작 권장</p><span class="todo">[확인필요]</span></li>
-        <li><b>D-14</b><p>얼굴선 점검</p><span class="todo">[확인필요]</span></li>
-        <li><b>D-7</b><p>가능 여부는 상담으로</p><span class="todo">[확인필요]</span></li>
+        <li><b>D-30</b><p>코스 시작 권장</p></li>
+        <li><b>D-14</b><p>얼굴선 점검</p></li>
+        <li><b>D-7</b><p>가능 여부는 상담으로</p></li>
       </ol>
     </div>
   </section>
@@ -285,29 +372,31 @@
       <h2>표기된 가격 그대로,<br>추가금 없이</h2>
       <div class="prices">
         <article class="price is-on" data-course="line">
-          <small>라인 정리 코스</small><h3>파인웨이브 + 파셀라</h3>
-          <p class="price__num"><s>정상가 000,000원</s><strong>000,000원</strong></p>
-          <p class="todo">[확인필요] 가격</p>
+          <img class="price__device" src="images/price-line-bg.jpg" alt="파인웨이브·파셀라 장비">
+          <small class="price__label">라인 정리 코스</small><h3>파인웨이브 + 파셀라</h3>
+          <p class="price__hook">지방감소 및 갸름해지는 탄력 리프팅</p>
+          <p class="price__num"><s>정상가 690,000원</s><strong>450<span class="price__comma">,</span>000<span class="price__won">원</span></strong></p>
         </article>
         <article class="price" data-course="firm">
-          <small>탄력·결 코스</small><h3>포트라 + 파셀라</h3>
-          <p class="price__num"><s>정상가 000,000원</s><strong>000,000원</strong></p>
-          <p class="todo">[확인필요] 가격</p>
+          <img class="price__device" src="images/price-firm-bg.jpg" alt="포트라·파셀라 장비">
+          <small class="price__label">탄력 · 결 코스</small><h3>포트라 + 파셀라</h3>
+          <p class="price__hook">기존 티타늄의 3파장 구성에<br>새로운 파장을 더한 4파장 시스템</p>
+          <p class="price__num"><s>정상가 790,000원</s><strong>450<span class="price__comma">,</span>000<span class="price__won">원</span></strong></p>
         </article>
       </div>
-      <p class="note">부가세 포함 여부 · 이벤트 기간 · 조건 <span class="todo">[확인필요]</span></p>
+      <p class="note">부가세 별도</p>
     </div>
   </section>
 
   <!-- ===================== S10 자주 묻는 질문 ===================== -->
-  <section class="sec sec--card">
+  <section class="sec sec--card" id="faq">
     <div class="container container--narrow">
       <p class="eyebrow">FAQ</p>
       <h2>받기 전에 궁금한 것</h2>
-      <details open><summary>시술 당일 화장이 되나요?</summary><p class="todo">[확인필요] 병원 답변</p></details>
-      <details><summary>아프거나 마취가 필요한가요?</summary><p class="todo">[확인필요] 병원 답변</p></details>
-      <details><summary>붉은기는 얼마나 가나요?</summary><p class="todo">[확인필요] 병원 답변</p></details>
-      <details><summary>중요한 날 며칠 전까지 받을 수 있나요?</summary><p class="todo">[확인필요] 병원 답변</p></details>
+      <details><summary>시술 당일 화장이 되나요?</summary><p>네, 시술 당일 세안과 화장 모두 가능합니다.</p></details>
+      <details><summary>아프거나 마취가 필요한가요?</summary><p>마취 없이 진행하며, 부담이 크지 않은 시술입니다.</p></details>
+      <details><summary>붉은기는 얼마나 가나요?</summary><p>대부분 시술 후 수 시간 내로 가라앉는 편입니다. 다만 피부 상태에 따라 다를 수 있습니다.</p></details>
+      <details><summary>중요한 날 며칠 전까지 받을 수 있나요?</summary><p>파인웨이브·포트라는 4일 전까지, 파셀라는 하루 전까지 가능합니다. 정확한 일정은 상담을 통해 확인해 주세요.</p></details>
       <details><summary>두 코스 중 무엇을 고르나요?</summary><p>턱선·부피감이 고민이면 라인 정리, 탄력과 피부결을 함께 보고 싶다면 탄력·결 코스를 권합니다. 최종 선택은 상담에서 얼굴을 보고 정합니다.</p></details>
     </div>
   </section>
@@ -316,14 +405,55 @@
   <section class="final">
     <div class="container container--narrow">
       <h2>사진 한 장만 보내주세요.<br>코스는 원장이 봅니다</h2>
-      <p>정면·옆모습 사진과 원하는 날짜를 카톡으로 남기시면 맞는 코스와 시기를 안내드립니다.</p>
-      <a class="btn btn--kakao js-kakao" href="#">카톡으로 사진 상담</a>
-      <address>VC성형외과 · 서울 강남구 압구정로80길 31 (청담동)<br><span class="todo">[확인필요] 전화 · 진료시간</span></address>
+      <p>정면·옆모습 사진과 원하는 날짜를 카톡으로 남기시면<br class="brk-m"> 맞는 코스와 시기를 안내드립니다.</p>
+      <a class="btn btn--kakao js-kakao" href="#"><span class="btn__label">카톡으로 무료 상담</span></a>
+      <div class="final__divider"></div>
+      <p class="eyebrow">LOCATIONS</p>
+      <h2 class="final__location">VC 성형외과 <span class="final__bar">ㅣ</span> 피부과<br>오시는길</h2>
+      <address>서울 강남구 압구정로80길 31, 2-3층 <span class="final__addr-sub">(청담동, BE twixt 빌딩)</span></address>
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x65c0c71fa36ff4c7%3A0x7af64dde79a824d6!2z67iM7J207JSo7ISx7ZiV7Jm46rO87J2Y7JuQ!5e0!3m2!1sko!2skr!4v1789722409450!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen title="VC성형외과 오시는길 지도"></iframe>
+      </div>
+      <div class="hours">
+        <h3>진료일정</h3>
+        <div class="hours__grid">
+          <div class="hours__off">
+            <div class="hours__off-group">
+              <b>정기휴무</b><span>매주 일요일</span>
+            </div>
+            <div class="hours__off-group hours__off-group--phone">
+              <b class="hours__phone-label">대표전화</b><span class="hours__phone-num">02-6228-5827</span>
+            </div>
+          </div>
+          <dl>
+            <dt>월·수</dt><dd>AM 10:00 - PM 07:30</dd>
+            <dt>화 · 목 · 금</dt><dd>AM 10:00 - PM 08:00</dd>
+            <dt>토요일</dt><dd>AM 10:00 - PM 03:00</dd>
+            <dt>점심시간</dt><dd>PM 01:00 - PM 02:00</dd>
+          </dl>
+        </div>
+      </div>
     </div>
   </section>
 </main>
 
-<div class="sticky"><a class="btn btn--kakao js-kakao" href="#" id="stickyCta">카톡으로 무료 상담</a></div>
+<div class="sticky"><a class="btn btn--kakao js-kakao" href="#" id="stickyCta"><span class="btn__label">카톡으로 무료 상담</span></a></div>
+
+<div class="side-nav" aria-label="빠른 메뉴">
+  <a class="side-nav__item side-nav__item--brand" href="https://vcps.kr/" target="_blank" rel="noopener" aria-label="VC성형외과 홈페이지"><img src="images/side-nav-logo.png" alt="VC"></a>
+  <a class="side-nav__item side-nav__item--kakao js-kakao" href="#">
+    <svg class="side-nav__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.86 1.9 5.37 4.75 6.78-.2.73-.73 2.63-.84 3.04-.13.5.19.5.4.36.16-.11 2.6-1.77 3.66-2.49.66.1 1.34.15 2.03.15 5.52 0 10-3.58 10-8.84S17.52 3 12 3z" fill="currentColor"/></svg>
+    카톡문의
+  </a>
+  <button type="button" class="side-nav__item side-nav__item--top" id="sideTop">
+    <svg class="side-nav__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="5,15 12,8 19,15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    TOP
+  </button>
+</div>
+
+<button type="button" class="top-fab" id="mobileTop" aria-label="맨 위로 이동">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="5,15 12,8 19,15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
 
 <script src="js/main.js"></script>
 </body>
